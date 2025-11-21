@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 18:57:12 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/21 15:03:11 by zchoo            ###   ########.fr       */
+/*   Created: 2025/11/20 17:07:13 by zchoo             #+#    #+#             */
+/*   Updated: 2025/11/20 18:16:57 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
+	unsigned char	*bytes;
 
-	i = ft_strlen((char *)s);
-	while (i >= 0)
+	i = 0;
+	bytes = (unsigned char *)s;
+	while (i < n)
 	{
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((char *)&s[i]);
-		i--;
+		if (bytes[i] == (unsigned char)c)
+			return (&bytes[i]);
+		i++;
 	}
 	return (NULL);
 }

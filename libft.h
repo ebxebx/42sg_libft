@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:01:10 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 15:02:21 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/20 17:07:44 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int				ft_atoi(char *str);
 
 void			ft_bzero(void *s, unsigned int n);
 void			ft_memset(void *s, int c, unsigned int n);
-
+void			*ft_memchr(const void *s, int c, unsigned int n);
 
 #endif
