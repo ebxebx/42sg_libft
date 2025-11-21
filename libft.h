@@ -6,9 +6,11 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:01:10 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 17:07:44 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/21 19:35:44 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -35,5 +37,7 @@ int				ft_atoi(char *str);
 void			ft_bzero(void *s, unsigned int n);
 void			ft_memset(void *s, int c, unsigned int n);
 void			*ft_memchr(const void *s, int c, unsigned int n);
-
+int				ft_memcmp(const void *s1, const void *s2, size_t n);
+void			*ft_memcpy(void *dest, const void *src, size_t n);
+void 			*ft_memmove(void *dest, const void *src, size_t n);
 #endif
