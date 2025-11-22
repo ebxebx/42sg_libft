@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:24:25 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 14:20:17 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:18:34 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ int	ft_extract_and_convert(char *str)
 	return (final_num);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str_)
 {
-	int	sign;
+	int		sign;
+	char	*str;
 
 	sign = 1;
+	str = (char *)str_;
 	while (ft_isspace(*str))
 		str++;
 	if (*str == '+' || *str == '-')

@@ -6,13 +6,16 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 19:18:38 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 16:23:53 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/21 20:52:38 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	unsigned char	uc;
+
+	uc = (unsigned char)c;
+	if ((uc >= 'a' && uc <= 'z') || (uc >= 'A' && uc <= 'Z'))
 		return (1);
 	return (0);
 }

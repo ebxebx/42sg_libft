@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 19:34:40 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/22 17:22:25 by zchoo            ###   ########.fr       */
+/*   Created: 2025/11/22 16:22:08 by zchoo             #+#    #+#             */
+/*   Updated: 2025/11/22 16:50:03 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*dst_b;
-	unsigned char	*src_b;
-	size_t			i;
+	char	*mem;
+	size_t	i;
 
-	dst_b = (unsigned char *) dest;
-	src_b = (unsigned char *) src;
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	if (nmemb > __SIZE_MAX__ / size)
+		return (NULL);
+	mem = malloc(nmemb * size);
+	if (!mem)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (i < nmemb * size)
 	{
-		if (src_b < dst_b && src_b + n >= dst_b)
-			*(dst_b + n - i - 1) = *(src_b + n - i - 1);
-		else
-			*(dst_b + i) = *(src_b + i);
+		mem[i] = 0;
 		i++;
 	}
-	return (dest);
+	return (mem);
 }

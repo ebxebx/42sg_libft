@@ -6,11 +6,11 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 14:58:47 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 15:01:43 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/22 16:05:23 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_memset(void *s, int c, unsigned int n)
+void	*ft_memset(void *s, int c, unsigned int n)
 {
 	unsigned int	i;
 	unsigned char	*bytes;
@@ -22,4 +22,5 @@ void	ft_memset(void *s, int c, unsigned int n)
 		bytes[i] = c;
 		i++;
 	}
+	return (s);
 }
