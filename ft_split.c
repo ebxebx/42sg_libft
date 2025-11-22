@@ -3,55 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zchoo <zchoo@student.42singapore.sg>       +#+  +:+       +#+        */
+/*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 11:55:06 by zchoo             #+#    #+#             */
-/*   Updated: 2025/08/11 14:13:22 by zchoo            ###   ########.fr       */
+/*   Created: 2025/11/22 19:31:24 by zchoo             #+#    #+#             */
+/*   Updated: 2025/11/22 20:05:56 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_is_whitespace(char c, char *charset)
-{
-	int	found;
-
-	found = 0;
-	while (*charset && !found)
-		found = (c == *charset++);
-	return (found);
-}
-
-int	ft_count_words(char *str, char *charset)
+static int	ft_count_words(char *str, char c)
 {
 	int	count;
 
 	count = 0;
 	while (*str)
 	{
-		while (ft_is_whitespace(*str, charset))
+		while (*str == c)
 			str++;
 		if (*str == '\0')
 			break ;
-		while (*str && !ft_is_whitespace(*str, charset))
+		while (*str && *str != c)
 			str++;
 		count++;
 	}
 	return (count);
 }
 
-int	ft_strlen(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (*str++)
-		len++;
-	return (len);
-}
-
-char	*ft_strndup(char *str, int n)
+static char	*ft_strndup(char *str, int n)
 {
 	char	*copy;
 	int		i;
@@ -71,31 +51,39 @@ char	*ft_strndup(char *str, int n)
 	return (copy);
 }
 
-char	**ft_split(char *str, char *charset)
+static void	split_to_array(char **arr, int words, char *str, char c)
 {
-	int		words;
 	int		i;
 	char	*start;
-	char	**arr;
 
-	words = ft_count_words(str, charset);
-	arr = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!arr)
-		return (NULL);
 	i = 0;
 	while (i < words)
 	{
-		while (ft_is_whitespace(*str, charset))
+		while (*str == c)
 			str++;
 		if (*str == '\0')
 			break ;
 		start = str;
-		while (*str && !ft_is_whitespace(*str, charset))
+		while (*str && *str != c)
 			str++;
 		arr[i] = ft_strndup(start, str - start);
 		i++;
 	}
 	arr[i] = NULL;
+}
+
+char	**ft_split(const char *str, char c)
+{
+	char	**arr;
+	int		words;
+	char	*str2;
+
+	str2 = (char *)str;
+	words = ft_count_words(str2, c);
+	arr = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!arr)
+		return (NULL);
+	split_to_array(arr, words, str2, c);
 	return (arr);
 }
 

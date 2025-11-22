@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:01:10 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/22 16:42:02 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/22 19:25:09 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char			ft_tolower(char c);
 char			ft_toupper(char c);
 
 int				ft_atoi(const char *str);
+char			*ft_itoa(int n);
 
 void			ft_bzero(void *s, unsigned int n);
 void			*ft_memset(void *s, int c, unsigned int n);
@@ -40,6 +41,9 @@ void			*ft_memchr(const void *s, int c, unsigned int n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
-
 void			*ft_calloc(size_t nmemb, size_t size);
+
+char			*ft_strjoin(char const *s1, char const *s2);
+char			**ft_split(char const *s, char c);
+
 #endif
