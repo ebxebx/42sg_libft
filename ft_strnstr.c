@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 20:36:02 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/19 18:54:40 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/24 16:54:42 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strnstr(char *str, char *to_find, unsigned int size)
 	i = 0;
 	while (str[0] != 0 && i < size)
 	{
-		if (ft_strlen(to_find) >= size - i)
+		if (ft_strlen(to_find) > size - i)
 			break ;
 		cmp_rst = ft_strncmp(str, to_find, ft_strlen(to_find));
 		if (cmp_rst == 0)
@@ -39,12 +39,14 @@ char	*ft_strnstr(char *str, char *to_find, unsigned int size)
 }
 
 // without use ft_strncmp
-/*char	*ft_strnstr(char *str, char *to_find, unsigned int size)
+/* char	*ft_strnstr(char *str, char *to_find, unsigned int size)
 {
 	int				found;
 	unsigned int	i;
 	unsigned int	j;
 
+	if (*to_find == '\0')
+		return (str);
 	found = -1;
 	i = 0;
 	while (str[i] != 0 && i < size)
@@ -64,7 +66,7 @@ char	*ft_strnstr(char *str, char *to_find, unsigned int size)
 		return (&str[i]);
 	else
 		return (NULL);
-}*/
+} */
 
 // #include <stdio.h>
 // //void	*ft_print_memory(void *addr, unsigned int size);
