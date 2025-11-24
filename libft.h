@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:01:10 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/24 16:13:53 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/24 19:16:19 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,14 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int nbr, int fd);
+
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+} t_list;
+
+t_list			*ft_lstnew(void *content);
+void			ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
