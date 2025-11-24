@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:01:10 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/24 11:55:29 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/24 15:45:30 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,7 @@ char			*ft_strjoin(const char *s1, const char *s2);
 char			**ft_split(const char *s, char c);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
 char			*ft_strtrim(const char *s1, const char *set);
+char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+
 #endif
