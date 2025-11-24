@@ -6,14 +6,14 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 19:36:00 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/22 19:54:20 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/24 11:55:29 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	int		total_size;
 	char	*str_joined;
