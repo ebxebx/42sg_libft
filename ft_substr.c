@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 10:36:38 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/27 14:27:01 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 16:41:54 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,18 @@
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char			*sub;
-	int				copy;
-	unsigned int	s_len;
+	size_t			copy;
+	size_t			s_len;
 
 	s_len = ft_strlen(s);
-	copy = s_len - start;
-	if (copy > (int)len)
-		copy = len;
-	if (copy < 0)
+	if (start > s_len)
 		copy = 0;
+	else
+	{
+		copy = s_len - start;
+		if (copy > len)
+			copy = len;
+	}
 	sub = malloc((copy + 1) * sizeof(char));
 	if (!sub)
 		return (NULL);

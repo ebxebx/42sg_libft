@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 12:48:08 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/25 15:30:02 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 16:46:49 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(node, del);
 		node = temp;
 	}
-	ft_lstdelone(node, del);
+	if (node)
+		ft_lstdelone(node, del);
 	node = NULL;
 	*lst = NULL;
 }

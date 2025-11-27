@@ -6,18 +6,15 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 13:31:42 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/27 14:42:11 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 16:26:57 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	char	rst;
-
-	rst = c;
 	if (c >= 'a' && c <= 'z')
-		rst += ('A' - 'a');
-	return (rst);
+		return (c + ('A' - 'a'));
+	return (c);
 }
