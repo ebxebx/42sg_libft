@@ -6,9 +6,11 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:43:53 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/24 15:53:20 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:26:16 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

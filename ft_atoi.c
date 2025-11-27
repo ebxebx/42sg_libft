@@ -6,21 +6,16 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 18:24:25 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/22 16:18:34 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 12:58:32 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	return (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t'
 		|| c == '\v');
-}
-
-int	ft_char_isnumeric(char c)
-{
-	return (c >= '0' && c <= '9');
 }
 
 int	ft_extract_and_convert(char *str)
@@ -30,7 +25,7 @@ int	ft_extract_and_convert(char *str)
 
 	final_num = 0;
 	base = 10;
-	while (*str && (ft_char_isnumeric(*str)))
+	while (*str && (ft_isdigit(*str)))
 	{
 		final_num *= base;
 		final_num += (*str - '0');
@@ -54,7 +49,7 @@ int	ft_atoi(const char *str_)
 			sign *= -1;
 		str++;
 	}
-	if (!ft_char_isnumeric(*str))
+	if (!ft_isdigit(*str))
 		return (0);
 	return (ft_extract_and_convert(str) * sign);
 }

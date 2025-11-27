@@ -6,11 +6,11 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:17:12 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/24 16:26:51 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:25:11 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

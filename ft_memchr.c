@@ -6,15 +6,15 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:07:13 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 18:16:57 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 13:49:47 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, unsigned int n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*bytes;
 
 	i = 0;

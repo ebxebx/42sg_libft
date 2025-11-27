@@ -6,30 +6,24 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 16:22:08 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/22 16:50:03 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:23:28 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdint.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*mem;
-	size_t	i;
+	size_t	total;
 
-	if (nmemb == 0 || size == 0)
-		return (malloc(0));
-	if (nmemb > __SIZE_MAX__ / size)
+	if (size > 0 && nmemb > SIZE_MAX / size)
 		return (NULL);
-	mem = malloc(nmemb * size);
+	total = nmemb * size;
+	mem = malloc(total);
 	if (!mem)
 		return (NULL);
-	i = 0;
-	while (i < nmemb * size)
-	{
-		mem[i] = 0;
-		i++;
-	}
+	ft_bzero(mem, total);
 	return (mem);
 }

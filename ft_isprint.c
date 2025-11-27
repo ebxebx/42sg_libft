@@ -6,11 +6,13 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 18:22:17 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 16:24:42 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:42:11 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char c)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }

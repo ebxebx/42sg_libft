@@ -6,12 +6,10 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:17:45 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/24 17:06:22 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:25:21 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include "libft.h"
 
 void	ft_putnbr_fd(int nbr, int fd)

@@ -6,11 +6,13 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 13:27:38 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 13:31:38 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:42:11 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(char c)
+#include "libft.h"
+
+char	ft_tolower(int c)
 {
 	char	rst;
 

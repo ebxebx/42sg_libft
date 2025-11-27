@@ -6,11 +6,10 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 18:34:31 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/22 19:28:32 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:24:25 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 static int	get_nbr_length(int n)

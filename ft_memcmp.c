@@ -6,11 +6,11 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 15:19:15 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/21 15:39:46 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:45:32 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

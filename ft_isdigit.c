@@ -6,11 +6,13 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 19:18:38 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 16:24:24 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:42:11 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

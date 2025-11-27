@@ -6,38 +6,32 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 20:36:02 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/24 16:54:42 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:12:42 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, unsigned int size)
+char	*ft_strnstr(const char *str, const char *to_find, size_t size)
 {
 	int				cmp_rst;
 	unsigned int	i;
 
 	if (*to_find == '\0')
-		return (str);
+		return ((char *)str);
+	if (*str == '\0')
+		return (NULL);
 	cmp_rst = -1;
 	i = 0;
-	while (str[0] != 0 && i < size)
+	while (i < size && ft_strlen(to_find) <= size - i)
 	{
-		if (ft_strlen(to_find) > size - i)
-			break ;
-		cmp_rst = ft_strncmp(str, to_find, ft_strlen(to_find));
+		cmp_rst = ft_strncmp(str + i, to_find, ft_strlen(to_find));
 		if (cmp_rst == 0)
-			break ;
-		str++;
+			return ((char *)str + i);
 		i++;
 	}
-	if (cmp_rst == 0)
-		return (str);
-	else
-		return (NULL);
+	return (NULL);
 }
-
 // without use ft_strncmp
 /* char	*ft_strnstr(char *str, char *to_find, unsigned int size)
 {
@@ -67,25 +61,3 @@ char	*ft_strnstr(char *str, char *to_find, unsigned int size)
 	else
 		return (NULL);
 } */
-
-// #include <stdio.h>
-// //void	*ft_print_memory(void *addr, unsigned int size);
-// int	main(void)
-// {
-// 	char	*src;
-// 	char	*find;
-
-// 	src = "Hello!";
-// 	find = "ll";
-// 	printf("Find %s from %s\n", src, find);
-// 	printf("Found: %s", ft_strstr(src, find));
-
-// 	src = "Hello!";
-// 	find = "aaa";
-// 	printf("Find %s from %s\n", src, find);
-// 	printf("Found: %s", ft_strstr(src, find));
-
-// 	printf("\n");
-
-// 	return (1);
-// }

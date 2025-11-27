@@ -6,13 +6,11 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:53:27 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/24 14:36:01 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:26:55 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
 static int	is_char_in_set(const char c, const char *set)
 {

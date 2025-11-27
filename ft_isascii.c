@@ -6,11 +6,13 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 18:19:12 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/20 16:24:12 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:42:11 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(char c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

@@ -6,11 +6,10 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 18:57:12 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/21 15:03:11 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:26:46 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)

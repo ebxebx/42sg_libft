@@ -24,21 +24,8 @@ CFLAGS = -Wall -Wextra -Werror
 # This tells Make: "I want you to build $(NAME)"
 all: $(NAME)
 
-all2: $(NAME)
-	$(CC) $(CFLAGS) ../test.c -o test -L. -lft -lbsd -g
-	# run test
-	./test
-
-bonus2: $(NAME) bonus_build
-	$(CC) $(CFLAGS) ../test.c -o test -L. -lft -lbsd -g
-	# run test
-	./test
-
-bonus: $(NAME) bonus_build
-
-bonus_build: $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
-	touch bonus_build
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 # The Library Rule. This creates the actual .a file
 $(NAME): $(OBJS)
@@ -55,3 +42,5 @@ fclean: clean
 	rm -f $(NAME) test bonus_build
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus

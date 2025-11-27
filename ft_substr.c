@@ -6,11 +6,10 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 10:36:38 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/24 11:55:29 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:27:01 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)

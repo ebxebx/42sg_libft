@@ -6,64 +6,24 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 20:59:25 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/19 15:29:15 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 13:35:46 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-// static int	ft_strlen(char *str)
-// {
-// 	int	l;
-
-// 	l = 0;
-// 	while (str[l] != '\0')
-// 	{
-// 		l++;
-// 	}
-// 	return (l);
-// }
-
-// unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-// {
-// 	int	i;
-// 	int	src_len;
-// 	int	dest_len;
-// 	int	dest_free;
-// 	int	orig_dest_len;
-
-// 	src_len = ft_strlen(src);
-// 	dest_len = ft_strlen(dest);
-// 	orig_dest_len = dest_len;
-// 	if (dest_len > (int)size)
-// 		dest_len = size;
-// 	if (size == 0 || dest_len == (int)size)
-// 		return (src_len + orig_dest_len);
-// 	dest_free = size - dest_len - 1;
-// 	i = 0;
-// 	while (i < dest_free && src[i] != 0)
-// 	{
-// 		dest[dest_len + i] = src[i];
-// 		i++;
-// 	}
-// 	if (dest_len + i < (int)size)
-// 		dest[dest_len + i] = '\0';
-// 	return (dest_len + src_len);
-// }
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
-	unsigned int	dest_len;
-	unsigned int	src_len;
-	unsigned int	to_copy;
-	unsigned int	i;
+	size_t	dest_len;
+	size_t	src_len;
+	size_t	to_copy;
+	size_t	i;
 
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
-	if (dest_len >= size)
-		return (src_len + size);
-	to_copy = size - dest_len - 1;
+	if (dest_len >= dstsize)
+		return (src_len + dstsize);
+	to_copy = dstsize - dest_len - 1;
 	i = 0;
 	while (src[i] && i < to_copy)
 	{
@@ -73,5 +33,3 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[dest_len + i] = '\0';
 	return (src_len + dest_len);
 }
-
-// Check test.main.c for testing

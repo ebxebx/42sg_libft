@@ -6,11 +6,10 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 14:51:49 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/24 15:43:13 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 14:26:35 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
