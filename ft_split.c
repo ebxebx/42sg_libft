@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 19:31:24 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/27 14:25:57 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/11/27 18:02:44 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,14 @@ static char	*ft_strndup(char *str, int n)
 	return (copy);
 }
 
-static void	split_to_array(char **arr, int words, char *str, char c)
+static void	free_array(char **arr, size_t n)
+{
+	while (n > 0)
+		free(arr[--n]);
+	free(arr);
+}
+
+static char	**split_to_array(char **arr, int words, char *str, char c)
 {
 	int		i;
 	char	*start;
@@ -66,9 +73,15 @@ static void	split_to_array(char **arr, int words, char *str, char c)
 		while (*str && *str != c)
 			str++;
 		arr[i] = ft_strndup(start, str - start);
+		if (!arr[i])
+		{
+			free_array(arr, i);
+			return (NULL);
+		}
 		i++;
 	}
 	arr[i] = NULL;
+	return (arr);
 }
 
 char	**ft_split(const char *str, char c)
@@ -82,8 +95,7 @@ char	**ft_split(const char *str, char c)
 	arr = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!arr)
 		return (NULL);
-	split_to_array(arr, words, str2, c);
-	return (arr);
+	return (split_to_array(arr, words, str2, c));
 }
 
 /* #include <stdio.h>
