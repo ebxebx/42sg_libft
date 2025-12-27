@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:01:10 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/27 18:19:28 by zchoo            ###   ########.fr       */
+/*   Updated: 2025/12/27 20:11:39 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct s_list
 t_list			*ft_lstnew(void *content);
 t_list			*ft_lstlast(t_list *lst);
 t_list			*ft_lstpop(t_list **lst);
+t_list			*ft_lstpop_back(t_list **lst);
 void			ft_lstadd_front(t_list **lst, t_list *new);
 void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
