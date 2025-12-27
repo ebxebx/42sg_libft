@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 17:42:03 by zchoo             #+#    #+#             */
-/*   Updated: 2025/11/25 13:31:11 by zchoo            ###   ########.fr       */
+/*   Created: 2025/11/25 10:59:07 by zchoo             #+#    #+#             */
+/*   Updated: 2025/12/27 18:35:53 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*node;
+	int		i;
 
-	node = ft_calloc(1, sizeof(t_list));
-	if (node)
+	i = 0;
+	while (lst)
 	{
-		node->content = content;
-		node->next = NULL;
-		return (node);
+		i++;
+		if (lst->next)
+			lst = lst->next;
+		else
+			break ;
 	}
-	else
-		return (NULL);
+	return (i);
 }
