@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpop_back.c                                   :+:      :+:    :+:   */
+/*   ft_strarr_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 20:11:54 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/04 19:14:02 by zchoo            ###   ########.fr       */
+/*   Created: 2026/01/04 19:16:11 by zchoo             #+#    #+#             */
+/*   Updated: 2026/01/04 19:37:44 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstpop_back(t_list **lst)
+void	ft_strarr_free(char **arr)
 {
-	t_list	*last;
-	t_list	*prev;
+	int	i;
 
-	if (!lst || !*lst)
-		return (NULL);
-	last = *lst;
-	prev = NULL;
-	while (last->next)
+	i = 0;
+	while (arr && arr[i])
 	{
-		prev = last;
-		last = last->next;
+		free(arr[i]);
+		i++;
 	}
-	if (prev)
-		prev->next = NULL;
-	else
-		*lst = NULL;
-	return (last);
+	free(arr);
 }

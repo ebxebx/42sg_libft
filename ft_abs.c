@@ -6,15 +6,15 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 20:02:42 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/29 20:03:06 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/04 19:14:23 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_abs(int x)
+size_t	ft_abs(int x)
 {
 	if (x < 0)
-		return -x;
-	return x;
+		return (-x);
+	return (x);
 }

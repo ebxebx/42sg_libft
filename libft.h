@@ -6,13 +6,14 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:01:10 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/29 20:04:00 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/05 17:23:54 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -37,6 +38,7 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 
 int					ft_atoi(const char *str);
+long				ft_atol(const char *str);
 char				*ft_itoa(int n);
 
 void				ft_bzero(void *s, size_t n);
@@ -54,6 +56,7 @@ char				*ft_strtrim(const char *s1, const char *set);
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 int					ft_strarr_len(char **arr);
+void				ft_strarr_free(char **arr);
 
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
@@ -80,5 +83,9 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 
 size_t				ft_abs(int x);
+int					ft_printf(const char *fmt, ...);
+int					ft_vprintf(const char *fmt, va_list *args);
+
+char				*get_next_line(int fd);
 
 #endif

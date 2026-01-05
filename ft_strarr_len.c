@@ -6,17 +6,18 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 12:57:53 by zchoo             #+#    #+#             */
-/*   Updated: 2025/12/28 12:58:17 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/04 19:12:53 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strarr_len(char **arr)
+int	ft_strarr_len(char **arr)
 {
-    int len = 0;
+	int	len;
 
-    while (arr[len])
-        len++;
-    return (len);
+	len = 0;
+	while (arr[len])
+		len++;
+	return (len);
 }

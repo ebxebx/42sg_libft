@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpop_back.c                                   :+:      :+:    :+:   */
+/*   ft_vprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 20:11:54 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/04 19:14:02 by zchoo            ###   ########.fr       */
+/*   Created: 2025/12/01 16:13:15 by zchoo             #+#    #+#             */
+/*   Updated: 2026/01/03 13:20:02 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstpop_back(t_list **lst)
+int	ft_vprintf(const char *fmt, va_list *args)
 {
-	t_list	*last;
-	t_list	*prev;
+	size_t	cnt;
 
-	if (!lst || !*lst)
-		return (NULL);
-	last = *lst;
-	prev = NULL;
-	while (last->next)
+	cnt = 0;
+	while (*fmt)
 	{
-		prev = last;
-		last = last->next;
+		if (*fmt == '%')
+		{
+			fmt++;
+			cnt += handle_flag(args, *fmt);
+		}
+		else
+		{
+			ft_putchar_fd(*fmt, 1);
+			cnt++;
+		}
+		fmt++;
 	}
-	if (prev)
-		prev->next = NULL;
-	else
-		*lst = NULL;
-	return (last);
+	return (cnt);
 }
+
+/* int main(void)
+{
+	ft_printf("", 1, 2, 3);
+	return (0);
+} */
