@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 16:13:15 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/03 13:18:29 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/17 18:05:22 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	handle_flag(va_list *ap, const char flag)
 		cnt += handle_text(ap, flag);
 	else if (flag == 'p')
 		cnt += handle_pointer(ap, flag);
-	else if (ft_strchr("diuxX", flag))
+	else if (ft_strchr("dfiuxX", flag))
 		cnt += handle_number(ap, flag);
 	else if (flag == '%')
 	{

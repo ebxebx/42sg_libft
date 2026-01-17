@@ -6,18 +6,19 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 14:00:11 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/02 14:51:39 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/17 20:58:10 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <math.h>
 
 int	handle_hexadecimal(va_list *ap, const char flag)
 {
-	size_t				cnt;
-	unsigned int		num;
-	char				*hex_str;
-	int					to_upper;
+	size_t			cnt;
+	unsigned int	num;
+	char			*hex_str;
+	int				to_upper;
 
 	cnt = 0;
 	to_upper = 0;
@@ -40,8 +41,8 @@ int	handle_hexadecimal(va_list *ap, const char flag)
 
 int	handle_signed_number(va_list *ap, const char flag)
 {
-	size_t			cnt;
-	int				d;
+	size_t	cnt;
+	int		d;
 
 	cnt = 0;
 	if (flag == 'd' || flag == 'i')
@@ -68,9 +69,33 @@ int	handle_unsigned_number(va_list *ap, const char flag)
 	return (cnt);
 }
 
+int	handle_floating_point_number(va_list *ap, const char flag)
+{
+	size_t	cnt;
+	double	int_part;
+	double	frac_part;
+	int		frac_len;
+
+	cnt = 0;
+	if (flag == 'f')
+	{
+		frac_part = rint(modf(va_arg(*ap, double), &int_part) * 1000000);
+		ft_putnbr_fd(int_part, 1);
+		cnt += get_nbr_length((long)int_part);
+		ft_putchar_fd('.', 1);
+		cnt++;
+		frac_len = get_nbr_length((long)frac_part);
+		if (frac_len < 6)
+			write(1, "000000", 6 - frac_len);
+		ft_putnbr_fd(frac_part, 1);
+		cnt += frac_len;
+	}
+	return (cnt);
+}
+
 int	handle_number(va_list *ap, const char flag)
 {
-	size_t			cnt;
+	size_t	cnt;
 
 	cnt = 0;
 	if (flag == 'd' || flag == 'i')
@@ -79,5 +104,7 @@ int	handle_number(va_list *ap, const char flag)
 		cnt += handle_unsigned_number(ap, flag);
 	else if (flag == 'x' || flag == 'X')
 		cnt += handle_hexadecimal(ap, flag);
+	else if (flag == 'f')
+		cnt += handle_floating_point_number(ap, flag);
 	return (cnt);
 }

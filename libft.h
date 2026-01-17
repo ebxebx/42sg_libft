@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:01:10 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/05 17:23:54 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/12 12:29:12 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int					ft_isprint(int c);
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dest, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dest, const char *src, size_t dstsize);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *str, const char *to_find,
 						size_t size);
@@ -39,6 +40,7 @@ int					ft_toupper(int c);
 
 int					ft_atoi(const char *str);
 long				ft_atol(const char *str);
+double				ft_atof(const char *str);
 char				*ft_itoa(int n);
 
 void				ft_bzero(void *s, size_t n);
