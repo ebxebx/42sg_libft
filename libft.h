@@ -6,7 +6,7 @@
 /*   By: zchoo <zchoo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 11:01:10 by zchoo             #+#    #+#             */
-/*   Updated: 2026/01/12 12:29:12 by zchoo            ###   ########.fr       */
+/*   Updated: 2026/01/21 12:09:52 by zchoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,10 @@ int					ft_printf(const char *fmt, ...);
 int					ft_vprintf(const char *fmt, va_list *args);
 
 char				*get_next_line(int fd);
+
+int					ft_min(int a, int b);
+int					ft_max(int a, int b);
+double				ft_minf(double a, double b);
+double				ft_maxf(double a, double b);
 
 #endif
